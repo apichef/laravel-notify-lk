@@ -7,7 +7,7 @@ class Contact
     /** @var string */
     private $firstName;
 
-    /**@var string|null */
+    /** @var string|null */
     private $lastName;
 
     /** @var string|null */

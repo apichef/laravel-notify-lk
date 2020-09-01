@@ -27,5 +27,5 @@ return [
     | You can request a sender id from:
     | https://app.notify.lk/settings/senders
     */
-    'default_sender_id' => env('NOTIFY_LK_DEFAULT_SENDER_ID', 'NotifyDEMO')
+    'default_sender_id' => env('NOTIFY_LK_DEFAULT_SENDER_ID', 'NotifyDEMO'),
 ];
