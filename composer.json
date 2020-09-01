@@ -1,0 +1,60 @@
+{
+    "name": "apichef/laravel-notify-lk",
+    "type": "library",
+    "description": "NotifyLK Notification Channel for laravel.",
+    "keywords": [
+        "apichef",
+        "laravel-notify-lk"
+    ],
+    "homepage": "https://github.com/apichef/laravel-notify-lk",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Milroy E. Fraser",
+            "email": "milroy@outlook.com",
+            "homepage": "https://milroy.me",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.2.5",
+        "guzzlehttp/guzzle": "^7.0",
+        "illuminate/support": "^5.8|^6.0|^7.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^5.0",
+        "phpunit/phpunit" : ">=8.0",
+        "squizlabs/php_codesniffer": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "ApiChef\\NotifyLK\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ApiChef\\NotifyLK\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "check-style": "phpcs --exclude=PSR1.Methods.CamelCapsMethodName src tests",
+        "fix-style": "phpcbf --exclude=PSR1.Methods.CamelCapsMethodName src tests"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        },
+        "laravel": {
+            "providers": [
+                "ApiChef\\NotifyLK\\NotifyLKServiceProvider"
+            ],
+            "aliases": {
+                "NotifyLK": "ApiChef\\NotifyLK\\Support\\Facades\\NotifyLK"
+            }
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
