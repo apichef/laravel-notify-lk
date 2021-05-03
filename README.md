@@ -21,7 +21,34 @@ $ composer require apichef/laravel-notify-lk
 ## Usage
 
 ``` php
-// ...
+namespace App\Notifications;
+
+use ApiChef\NotifyLK\Contact;
+use ApiChef\NotifyLK\NotifyLKChannel;
+use ApiChef\NotifyLK\NotifyLKMessage;
+use Illuminate\Bus\Queueable;
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Notifications\Messages\MailMessage;
+use Illuminate\Notifications\Notification;
+
+class MyNotification extends Notification
+{
+    use Queueable;
+
+    public function via($notifiable)
+    {
+        return [
+            NotifyLKChannel::class,
+        ];
+    }
+
+    public function toNotifyLK($notifiable): NotifyLKMessage
+    {
+        return (new NotifyLKMessage())
+            ->content('This is a test message.')
+            ->contact(new Contact('John', 'Doe', 'john.doe@example.com', 'No 1, Colombo, Sri Lanka', 'a_group'));
+    }
+}
 ```
 
 ## Change log
